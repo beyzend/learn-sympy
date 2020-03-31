@@ -1,0 +1,230 @@
+\documentclass[10pt,oneside]{report}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%\renewcommand{\familydefault}{\ttdefault}
+
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Nan "Leon" Li}
+%\newcommand{\addr}{2900 Sunridge Heights Pkwy. Apt 924 Henderson, Nevada 89052}
+\newcommand{\addr}{2600 E. Springfield Pl. Unit 29 Chandler, A.Z 85286}
+\newcommand{\phone}{(480) 246-6540}
+\newcommand{\email}{llwijk987@gmail.com}
+\newcommand{\website}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\selectfont\Huge\scshape#1\end{center}
+}
+
+
+\newcommand{\objective}[1]{
+  \vspace{2pt}
+  {\normalsize\textbf{Objective \\}}
+  \vspace{1pt}
+  \small
+  #1
+}
+
+\newenvironment{reference}[0]{
+  \vspace{2pt}
+  {\normalsize\textbf{Reference \\}}
+  \begin{itemize}
+  \vspace{1pt} 
+}{
+  \end{itemize}
+}
+
+\newcommand{\refitem}[4]{
+  \vspace{1pt}
+  \item
+  {#1. #2. #3. #4.}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{1pt}
+  {\normalsize\textbf{#1}}
+  
+  \begin{itemize}
+  \vspace{1pt}
+}{
+ 	\end{itemize}
+}
+
+\newenvironment{ressectionandintro}[2]{
+ \vspace{1pt}
+  {\normalsize\textbf{#1} \\}
+  {#2}
+  \begin{itemize}
+  \vspace{1pt}
+}{
+  \end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+  \vspace{-5pt}
+  \small
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+%\renewcommand{\familydefault}{\rmdefault}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	%\vspace{-5pt}
+	\vspace{1pt}
+  \small
+  \item
+  \textbf{#1}---#2 
+  \textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	%\vspace{-2pt}
+  \vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+
+% This is a simple sublist accssor 23
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-1pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+% Name with horizontal rule
+\bigname{\name}
+\vspace{1pt} \rule{\textwidth}{1pt}
+\vspace{1pt} {\small\itshape \addr \hfill \phone; \email}
+% \vspace{1pt} {\small\itshape \addr \hfill \phone; \email}
+% \vspace{-1pt} {\small\itshape \hfill \website}
+\vspace{8 pt}
+
+\begin{ressection}{Summary of Skills}
+  {
+  \resitem{Tools: Excel, Word, Visual Studios, Microsoft Code, Eclipse, CMake, Gittortise and FlashDevelop.}
+  \resitem{Languages: C\#, C/C++, Python, AS3, Haxe, Javascript, Java, x86 Assembly, Scilab/Matlab, \LaTeX, GLSL, HLSL, OpenCL.}
+  \resitem{Technology: JQuery, Angular, Entity Framework, ASP.Net, .Net Framework, GIT, Docker, Docker-Compose, RESTFUL web services, HTML5, JSON, XML, AWS, Google App Engine, IIS, SQLServer, LevelDB, SQLite, wxPython, Windows and Linux development.}
+  \resitem{Math: Linear Algebra, Probability, and Machine Learning}
+  \resitem{Bilingual: can speak Mandarin Chinese.}
+  }
+\end{ressection}
+
+\begin{ressection}{Experience}
+  \begin{ressubsec}{Postmates, Inc}{New York}{Contract Driver: 2018-Present}
+    \ressubitem{Delivering for Postmates as contract driver.}
+  \end{ressubsec}
+  \begin{ressubsec}{ProMag Industries}{43 N 48th AVE, Phoenix AZ 85043}{Assembler: 2017}
+    \ressubitem{Worked as assembler assembling gun accessories.}
+  \end{ressubsec}
+  \begin{ressubsec}{S2k. Sigma Oil Corp.}{Supprise, Arizona}{Software Engineer: 2016-2016}
+    \ressubitem{Develop Windows Server 2016 Docker Containers for legacy S2k Systems while working in China.}
+    \ressubitem{Develop and maintain virtualized environments over the cloud.}
+    \ressubitem{Develop Docker based cluster environment.}
+    \ressubitem{Develop and maintain S2K website using PHP and HTML.}
+    \ressubitem{Work on POS system troubleshooting and document specification.}
+    \end{ressubsec}
+  
+  \begin{ressubsec}{International Gaming Technology}{Las Vegas, Nevada}{Software Engineer/Contractor: 2015}
+    \ressubitem{Working with managers to develop a service backend C\# Thread Parallel Library based TCP application to retrieve data from IGT's NexGen platform.}
+    \ressubitem{Working with Systems engineer to research and analyze IGT system architecture (from SAS to G2S translator to Message Queues to database backend). Using SQL Server to diagnose EGM problems from database events. Query log and following events through the system.}
+    \ressubitem{Debugging application on IGT's NexGen platform. Wrote code to do memory guard and thread specific output. Setting up debugging environment on IGT's NexGen platform.}
+    \ressubitem{Using VMWare vSphere to setup EGM gaming lab.}
+    \ressubitem{Together with managers to analyze data from IGT's NGx platform through a custom Excel script. Pivot tables, and scripting.}
+    \ressubitem{Installing EGM gaming platforms and setting up Windows Server 2012 PKI infrastructure. Other Systems based work such as setting up network on switches and racks.}
+    \end{ressubsec}
+  \begin{ressubsec}{Genesis Gaming Inc.}{Las Vegas, Nevada}{Software Developer: 2012-2015}
+    \ressubitem{Shipped multiple slot games for client's web based gaming platforms.}
+    \ressubitem{First developer at Las Vegas office to develop mobile HTML5 app using in-house MVC framework.}
+    \ressubitem{Debug and profile web application on IOS, Android phones, and Windows.}
+    \ressubitem{Integrating game with client's web platform (web service based) through HTTP get/post requests with XML and JSON.}
+    \ressubitem{Debugging and bug fixing framework and games from earlier developers. Trouble-shoot: using packet sniffers to examine IP frames.}
+    \ressubitem{GIT work. Working remotely with co-works at another office. Work with production team of engineers and artist.}
+    \ressubitem{Implementing client's custom Haxe->HTML5/Javascript touch based GUI from spec.}
+    \ressubitem{Implementing advanced features efficiently. Ex: pick bonus game with cascading explosion of barrels and falling stacks of replacement barrels, animated procedurally.}
+    \ressubitem{Working with content pipeline (Photoshop and Flash Professional): exporting and importing art into game. Texture Atlas creation. Art scaling for resolution independent art asset and scaling for low end devices.}
+  \end{ressubsec}
+  % \begin{ressubsec}{Apollo Group}{Phoenix,Arizona}{Software Equality Engineer: 2009-2010}
+  %   \ressubitem{Developed load tests using C for web application. Black box, white box; regression testing, and integration testing. Scripting for web tests.}
+  %   \ressubitem{Simulation and modelling techniques and statistics were used.}
+  %   \ressubitem{Worked with DB team to test application.}
+  %   \ressubitem{Code reviewed web application projects. SCRUM.}
+  %   \end{ressubsec}
+  \begin{ressubsec}{NIC Arizona}{Phoenix,Arizona}{Developer and System Admin: 2008-2010}
+    \ressubitem{Reconciliation of revenue stream: Reverse engineering legacy application (IBM developed) from logs and database.}
+    \ressubitem{First developer to implement and deploy web app (Physical Therapist license renewal) using JBOSS SEAM (new).}
+    \ressubitem{First developer to integrate NIC Payment Engine into web application.}
+    \ressubitem{System Admin: Application staging and deployment on JBoss.}
+    \ressubitem{System Admin: Troubleshooting legacy web applications on IBM AIX systems from terminal only interface. Troubleshooting legacy DB2 problems. Parsing logs.} 
+    \end{ressubsec}
+  \begin{ressubsec}{ETLab,Department of Mechanical Engineering, U.A.B}
+    {Birmingham, AL}{Student Programmer: 2004-2006}
+    \ressubitem{GUI tool development on MiniCAD and I.S.E.: C++, OpenGL, and Python.}
+  \end{ressubsec}
+\end{ressection}
+\begin{ressection}{Personal Projects}
+  \begin{ressubsec}{Fdastero Games}{Phoenix, Arizona}{Personal Development: 2012 - Present}
+    \ressubitem{C++ project game project}
+    \ressubitem{Modifying Ogre3D's initial DirectX11 implementation to support my game--worked directly on DirectX 11 code.}
+    \ressubitem{Started node.js/Express RESTFUL web service back end to communicate via ZeroMQ message queues to a simulated C++ game engine (simulates gaming back end for a slot gaming web site). Uses JQuery on the front end.}
+    \ressubitem{Potential Field Navigation in Python: Uses SciPy for distance field generation and mayavi for debugging visualization. Utilizes ZeroMQ. Later integrated into OpenCL C++.}
+  \end{ressubsec}
+\end{ressection}
+
+
+\begin{ressection}{Education}
+	\begin{ressubsec}{University Of Alabama At Birmingham}{Birmingham, AL}{Bachelor of Science, 2004-2007}
+		\ressubitem{Majored in Computer and Information Sciences}
+		\ressubitem{Majored in Mathematics}
+	\end{ressubsec}
+\end{ressection}
+
+% \begin{reference}
+% \refitem{Genesis Gaming:Jeff Jirsa, Corey Pilot}{Project Managers}{Jeff: jeff.j@gen-game.com Email,Corey:corey.p@gen-game.com}{Jeff:702.270.0072 Corey:702.493.8285}
+% \refitem{IGT: Gandalf.Hudlow@igt.com, https://www.linkedin.com/in/gandalfhudlow}{Manager}{VertiSystems for IGT: Chavi}{Account Manager}{(510) 254-5622}
+% \end{reference}
+
+
+\end{document}
+
