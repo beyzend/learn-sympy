@@ -1,5 +1,9 @@
-
-numOfCols=10
+def Reverse(str):
+    retStr = ""
+    for i in range(-1, -len(str) - 1 , -1):
+        retStr = retStr + str[i]
+    return retStr
+numOfCols=12
 labels = ["{{{}:>5}}".format(i) for i in range(numOfCols)]
 print("labels: {}".format(labels))
 labels = "".join(labels)
@@ -17,10 +21,9 @@ for i in indices:
     vals = [i] + [i*j for j in indices]
     print(labels.format(*vals))
 
-str = "happy"
-print(str)
-print(str[-1:-len(str)])
-for i in range(-1, -len(str) - 1, -1):
-    print(i)
-    print(str[i])
+strs = "happy@Python@ @a"
+strsReverse = "yppah@nohtyP@ @a"
+for (str, strR) in zip(strs.split('@'), strsReverse.split('@')):
+    print(Reverse(str) == strR)
+
 
