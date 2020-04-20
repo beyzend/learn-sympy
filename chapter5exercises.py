@@ -26,4 +26,37 @@ strsReverse = "yppah@nohtyP@ @a"
 for (str, strR) in zip(strs.split('@'), strsReverse.split('@')):
     print(Reverse(str) == strR)
 
+# Exercises 5.4.6
 
+# Exercise 1
+#Take in input into inputStr and count occurrence of each letter in the input.
+inputStr = input("Please enter a word!")
+print("The input string is: ", inputStr)
+inputDict = {}
+for letter in inputStr:
+    inputDict[letter] = inputDict.get(letter, 0) + 1 
+
+print("Letter occurrence:")
+for (key, val) in inputDict.items():
+    print("{} : {}".format(key, val))
+
+
+def addFruit(inventory, fruit, quantity=0):
+    inventory[fruit] = inventory.get(fruit, 0) + quantity
+    return None
+
+# Exercise 2
+# Make these tests work
+newInventory = {}
+addFruit(newInventory, "strawberries", 10)
+print("strawberries" in newInventory)
+print(newInventory["strawberries"] == 10)
+addFruit(newInventory, "strawberries", 25)
+print(newInventory["strawberries"] == 35)
+
+# Exercise 3
+import fileinput
+#Read from a stream to construct word count dictionary.
+for line in fileinput.input():
+    line = line.rstrip()
+    print(line)
